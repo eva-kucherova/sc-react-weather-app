@@ -1,4 +1,15 @@
-.Weather {
-  background-color: bisque;
-  border: 1px solid aquamarine;
+.Weather form {
+  text-align: center;
+}
+.Weather .main-weather {
+  border: 1px solid aqua;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.Weather ul {
+  margin: 0;
+  padding: 0;
+}
+.Weather li {
+  list-style: none;
 }

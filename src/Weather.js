@@ -6,7 +6,7 @@ export default function Weather() {
     <div className='Weather'>
       <h2>Today is Monday,</h2>
       <h3>the 25th of July 2022 </h3>
-      <form>
+      <form className='search-form my-3'>
         <input
           type='search'
           placeholder='Input a city...'
@@ -15,7 +15,7 @@ export default function Weather() {
         <input type='submit' value='Submit' className='btn btn-primary' />
       </form>
       <h1>just now in Paris</h1>
-      <div className='row'>
+      <div className='row main-weather '>
         <div className='col-6'>
           <img
             src='https://ssl.gstatic.com/onebox/weather/64/sunny.png'
