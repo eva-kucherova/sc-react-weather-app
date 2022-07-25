@@ -1,3 +1,10 @@
 .App {
   background-color: rgb(138, 193, 215);
 }
+.App h1,
+h2,
+h3 {
+  font-family: 'Courgette', cursive;
+  color: whitesmoke;
+  text-shadow: 1px 2px 1px #08310d;
+}
