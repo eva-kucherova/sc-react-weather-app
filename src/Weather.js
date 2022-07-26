@@ -11,18 +11,24 @@ export default function Weather() {
           type='search'
           placeholder='Input a city...'
           className='input-form'
+          autoFocus='on'
         />
-        <input type='submit' value='Submit' className='btn btn-primary ms-3' />
+        <input
+          type='submit'
+          value='Search'
+          className='btn btn-primary ms-3 shadow-sm'
+        />
       </form>
       <h1>just now in Paris</h1>
       <div className='row main-weather my-5 p-3'>
-        <div className='col-6 text-end'>
+        <div className='col-6 text-end clearfix'>
           <img
             src='https://ssl.gstatic.com/onebox/weather/64/sunny.png'
             alt='weather icon'
-            width='64px'
+            className='float-end'
           ></img>
-          25°C|F
+          <span className='main-temp mx-2'>25°</span>{' '}
+          <span className='main-units'>C|F</span>
         </div>
 
         <div className='col-6'>
