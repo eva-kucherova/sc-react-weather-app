@@ -7,7 +7,7 @@ export default function App() {
       <div className='container'>
         <Weather />
 
-        <footer>
+        <footer className='Footer text-center p-3'>
           Coded by{' '}
           <a
             href='https://zoia-k-responsive-portfolio.netlify.app/'
