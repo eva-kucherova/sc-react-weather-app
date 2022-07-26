@@ -1,7 +1,16 @@
 import React from 'react';
 import './Weather.css';
+import axios from 'axios';
 
 export default function Weather() {
+  function handleResponse(response) {
+    console.log(response);
+  }
+
+  let apiKey = 'e75845b1b358b448cb604a8d108e8ed3';
+  let city = 'Paris';
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(handleResponse);
   return (
     <div className='Weather mt-5 mb-2'>
       <h2>Today is Monday,</h2>
@@ -33,9 +42,18 @@ export default function Weather() {
 
         <div className='col-6'>
           <ul>
-            <li>Weather: Sunny</li>
-            <li>Wind: 💨 4 km/h</li>
-            <li>Humidity: 💧 12%</li>
+            <li>
+              {' '}
+              <strong>Weather:</strong> Sunny
+            </li>
+            <li>
+              {' '}
+              <strong>Wind:</strong> 💨 4 km/h
+            </li>
+            <li>
+              {' '}
+              <strong>Humidity:</strong> 💧 12%
+            </li>
           </ul>
         </div>
       </div>

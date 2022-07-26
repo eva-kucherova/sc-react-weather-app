@@ -12,6 +12,7 @@
 }
 .Weather li {
   list-style: none;
+  font-size: 16px;
 }
 .Weather img {
   position: relative;
