@@ -20,15 +20,23 @@ export default function Weather(props) {
     console.log(new Date());
   }
 
-    'Thursday',
-  ];
   if (weatherData.ready) {
+    let days = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+    let day = days[weatherData.data.getDay()];
+
     return (
       <div className='Weather mt-5 mb-2'>
-        <h2>Today is {weatherData.data.getDay()},</h2>
+        <h2>Today is {day},</h2>
         <h3>
-          the {weatherData.data.getDate()}th of {weatherData.data.getMonth()}{' '}
-          {weatherData.data.getFullYear()}{' '}
+          {weatherData.data.getDate()} June {weatherData.data.getFullYear()}{' '}
         </h3>
         <form className='search-form my-3'>
           <input
