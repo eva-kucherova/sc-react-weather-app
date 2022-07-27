@@ -13,17 +13,47 @@ export default function Weather(props) {
       mainTemp: response.data.main.temp,
       mainWind: response.data.wind.speed,
       mainHumidity: response.data.main.humidity,
-
+      data: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       city: response.data.name,
     });
   }
 
+  let days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  let day = days[weatherData.data.getDay()];
+
+  let monthes = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+  let month = monthes[weatherData.data.getMonth()];
+
   if (weatherData.ready) {
     return (
       <div className='Weather mt-5 mb-2'>
-        <h2>Today is Monday,</h2>
-        <h3>the 25th of July 2022 </h3>
+        <h2>Today is {day},</h2>
+        <h3>
+          the {weatherData.data.getDate()}th of {month}{' '}
+          {weatherData.data.getFullYear()}{' '}
+        </h3>
         <form className='search-form my-3'>
           <input
             type='search'
