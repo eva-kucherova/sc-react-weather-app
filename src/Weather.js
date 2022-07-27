@@ -4,22 +4,22 @@ import axios from 'axios';
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response);
 
-    setReady(true);
     setWeatherData({
+      ready: true,
       mainTemp: response.data.main.temp,
       mainWind: response.data.wind.speed,
       mainHumidity: response.data.main.humidity,
 
-      description: response.data.weather[0].main,
+      description: response.data.weather[0].description,
       city: response.data.name,
     });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className='Weather mt-5 mb-2'>
         <h2>Today is Monday,</h2>
@@ -53,7 +53,7 @@ export default function Weather() {
 
           <div className='col-6'>
             <ul>
-              <li>
+              <li className='text-capitalize'>
                 {' '}
                 <strong>Weather:</strong> {weatherData.description}
               </li>
