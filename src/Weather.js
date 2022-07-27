@@ -4,11 +4,19 @@ import axios from 'axios';
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [mainTemp, setMainTemp] = useState('');
+  const [weatherData, setWeatherData] = useState({});
   function handleResponse(response) {
     console.log(response);
-    setMainTemp(response.data.main.temp);
+
     setReady(true);
+    setWeatherData({
+      mainTemp: response.data.main.temp,
+      mainWind: response.data.wind.speed,
+      mainHumidity: response.data.main.humidity,
+
+      description: response.data.weather[0].main,
+      city: response.data.name,
+    });
   }
 
   if (ready) {
@@ -29,7 +37,7 @@ export default function Weather() {
             className='btn btn-primary ms-3 shadow-sm'
           />
         </form>
-        <h1>just now in Paris</h1>
+        <h1>just now in {weatherData.city}</h1>
         <div className='row main-weather my-5 p-3'>
           <div className='col-6 text-end clearfix'>
             <img
@@ -37,7 +45,9 @@ export default function Weather() {
               alt='weather icon'
               className='float-end'
             ></img>
-            <span className='main-temp mx-2'>{mainTemp}°</span>{' '}
+            <span className='main-temp mx-2'>
+              {Math.round(weatherData.mainTemp)}°
+            </span>{' '}
             <span className='main-units'>C|F</span>
           </div>
 
@@ -45,15 +55,15 @@ export default function Weather() {
             <ul>
               <li>
                 {' '}
-                <strong>Weather:</strong> Sunny
+                <strong>Weather:</strong> {weatherData.description}
               </li>
               <li>
                 {' '}
-                <strong>Wind:</strong> 💨 4 km/h
+                <strong>Wind:</strong> 💨 {weatherData.mainWind} km/h
               </li>
               <li>
                 {' '}
-                <strong>Humidity:</strong> 💧 12%
+                <strong>Humidity:</strong> 💧{weatherData.mainHumidity} %
               </li>
             </ul>
           </div>
@@ -63,7 +73,7 @@ export default function Weather() {
     );
   } else {
     let apiKey = 'e75845b1b358b448cb604a8d108e8ed3';
-    let city = 'Paris';
+    let city = 'Madrid';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
 
