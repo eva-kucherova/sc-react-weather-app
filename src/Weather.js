@@ -32,11 +32,28 @@ export default function Weather(props) {
     ];
     let day = days[weatherData.data.getDay()];
 
+    let monthes = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    let month = monthes[weatherData.data.getMonth()];
+
     return (
       <div className='Weather mt-5 mb-2'>
         <h2>Today is {day},</h2>
         <h3>
-          {weatherData.data.getDate()} June {weatherData.data.getFullYear()}{' '}
+          {weatherData.data.getDate()} of {month},{' '}
+          {weatherData.data.getFullYear()}{' '}
         </h3>
         <form className='search-form my-3'>
           <input
