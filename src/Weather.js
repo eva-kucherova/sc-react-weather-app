@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Weather.css';
 import axios from 'axios';
+import WeatherTemp from './WeatherTemp';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -120,6 +121,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
+        <WeatherTemp />
         <h2>There is no bad weather when your soul smiles!</h2>
       </div>
     );
