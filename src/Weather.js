@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     console.log(response);
 
@@ -19,7 +19,22 @@ export default function Weather(props) {
     });
     console.log(new Date());
   }
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert(city);
+    search();
+  }
 
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    let apiKey = 'e75845b1b358b448cb604a8d108e8ed3';
+
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
   if (weatherData.ready) {
     let days = [
       'Sunday',
@@ -50,12 +65,13 @@ export default function Weather(props) {
 
     return (
       <div className='Weather mt-5 mb-2'>
-        <form className='search-form my-3'>
+        <form className='search-form my-3' onSubmit={handleSubmit}>
           <input
             type='search'
             placeholder='Input a city...'
             className='input-form'
             autoFocus='on'
+            onChange={handleCityChange}
           />
           <input
             type='submit'
@@ -105,11 +121,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    let apiKey = 'e75845b1b358b448cb604a8d108e8ed3';
-    //let city = 'Madrid';
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=metric&appid=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return 'Loading...';
   }
 }
