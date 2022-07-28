@@ -88,14 +88,15 @@ export default function Weather(props) {
         </h3>
 
         <h1>just now in {weatherData.city}</h1>
-        <div className='row main-weather my-5 p-3'>
-          <div className='col-4 '>
+        <div className='row main-weather my-5 p-3 '>
+          <div className='col-4'>
             <img
               className='main-icon ms-auto d-block'
               src={weatherData.iconUrl}
               alt='weather icon'
             ></img>{' '}
-          </div>{' '}
+          </div>
+
           <div className='col-4 '>
             <span className='main-temp mx-2'>
               {Math.round(weatherData.mainTemp)}°
