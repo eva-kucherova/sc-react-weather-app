@@ -99,10 +99,7 @@ export default function Weather(props) {
           </div>
 
           <div className='col-4 '>
-            <span className='main-temp mx-2'>
-              {Math.round(weatherData.mainTemp)}°
-            </span>{' '}
-            <span className='main-units'>C|F</span>
+            <WeatherTemp celsius={weatherData.mainTemp} />
           </div>
           <div className='col-4'>
             <ul>
@@ -121,7 +118,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <WeatherTemp />
+
         <h2>There is no bad weather when your soul smiles!</h2>
       </div>
     );
