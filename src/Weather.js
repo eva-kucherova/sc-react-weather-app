@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Weather.css';
 import axios from 'axios';
 import WeatherTemp from './WeatherTemp';
+import WeatherIcon from './WeatherIcon';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -15,7 +16,7 @@ export default function Weather(props) {
       mainWind: response.data.wind.speed,
       mainHumidity: response.data.main.humidity,
       data: new Date(response.data.dt * 1000),
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       city: response.data.name,
     });
@@ -91,11 +92,7 @@ export default function Weather(props) {
         <h1>just now in {weatherData.city}</h1>
         <div className='row main-weather my-5 p-3 '>
           <div className='col-4'>
-            <img
-              className='main-icon ms-auto d-block'
-              src={weatherData.iconUrl}
-              alt='weather icon'
-            ></img>{' '}
+            <WeatherIcon code={weatherData.icon} />
           </div>
 
           <div className='col-4 '>
