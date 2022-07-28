@@ -14,9 +14,9 @@
   list-style: none;
   font-size: 16px;
 }
-.Weather img {
+.Weather .main-icon {
   position: relative;
-  top: -15 px;
+  top: -50 px;
 }
 .Weather .main-temp {
   font-family: 'Courgette', cursive;
@@ -27,7 +27,7 @@
   line-height: 64px;
 }
 .Weather .main-units {
-  font-size: 24px;
+  font-size: 18px;
   position: relative;
   top: -36px;
 }

@@ -14,6 +14,7 @@ export default function Weather(props) {
       mainWind: response.data.wind.speed,
       mainHumidity: response.data.main.humidity,
       data: new Date(response.data.dt * 1000),
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       city: response.data.name,
     });
@@ -88,19 +89,20 @@ export default function Weather(props) {
 
         <h1>just now in {weatherData.city}</h1>
         <div className='row main-weather my-5 p-3'>
-          <div className='col-6 text-end clearfix'>
+          <div className='col-4 '>
             <img
-              src='https://ssl.gstatic.com/onebox/weather/64/sunny.png'
+              className='main-icon ms-auto d-block'
+              src={weatherData.iconUrl}
               alt='weather icon'
-              className='float-end'
-            ></img>
+            ></img>{' '}
+          </div>{' '}
+          <div className='col-4 '>
             <span className='main-temp mx-2'>
               {Math.round(weatherData.mainTemp)}°
             </span>{' '}
             <span className='main-units'>C|F</span>
           </div>
-
-          <div className='col-6'>
+          <div className='col-4'>
             <ul>
               <li className='text-capitalize'>
                 {' '}
