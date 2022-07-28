@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+
   function handleResponse(response) {
     console.log(response);
 
@@ -49,11 +50,6 @@ export default function Weather(props) {
 
     return (
       <div className='Weather mt-5 mb-2'>
-        <h2>Today is {day},</h2>
-        <h3>
-          {weatherData.data.getDate()} of {month},{' '}
-          {weatherData.data.getFullYear()}{' '}
-        </h3>
         <form className='search-form my-3'>
           <input
             type='search'
@@ -67,6 +63,13 @@ export default function Weather(props) {
             className='btn btn-primary ms-3 shadow-sm'
           />
         </form>
+
+        <h2>Today is {day},</h2>
+        <h3>
+          {weatherData.data.getDate()} of {month},{' '}
+          {weatherData.data.getFullYear()}{' '}
+        </h3>
+
         <h1>just now in {weatherData.city}</h1>
         <div className='row main-weather my-5 p-3'>
           <div className='col-6 text-end clearfix'>
