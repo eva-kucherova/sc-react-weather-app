@@ -3,7 +3,7 @@
 }
 .Weather .main-weather {
   border: 1px solid aqua;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 .Weather ul {
