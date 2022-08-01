@@ -1,0 +1,8 @@
+.WeatherForecast {
+  border: 1px solid aquamarine;
+  text-align: center;
+}
+.WeatherForecast .forecast-icon {
+  display: block;
+  margin: 0 auto;
+}

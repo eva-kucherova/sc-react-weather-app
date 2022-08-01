@@ -15,7 +15,6 @@
   font-size: 16px;
 }
 .Weather canvas {
-  margin-left: 20px;
   display: inline-block;
 }
 .Weather .main-temp {

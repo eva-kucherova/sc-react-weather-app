@@ -93,7 +93,7 @@ export default function Weather(props) {
         <h1>just now in {weatherData.city}</h1>
         <div className='row main-weather my-5 p-3 '>
           <div className='col-4'>
-            <WeatherIcon code={weatherData.icon} />
+            <WeatherIcon code={weatherData.icon} size={72} />
           </div>
 
           <div className='col-4 '>
