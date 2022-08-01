@@ -3,6 +3,7 @@ import './Weather.css';
 import axios from 'axios';
 import WeatherTemp from './WeatherTemp';
 import WeatherIcon from './WeatherIcon';
+import WeatherForecast from './WeatherForecast';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -115,7 +116,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-
+        <WeatherForecast />
         <h2>There is no bad weather when your soul smiles!</h2>
       </div>
     );
