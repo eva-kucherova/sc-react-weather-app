@@ -13,6 +13,7 @@ export default function Weather(props) {
 
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       mainTemp: response.data.main.temp,
       mainWind: response.data.wind.speed,
       mainHumidity: response.data.main.humidity,
@@ -116,7 +117,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
         <h2>There is no bad weather when your soul smiles!</h2>
       </div>
     );
