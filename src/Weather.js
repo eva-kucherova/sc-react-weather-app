@@ -107,7 +107,8 @@ export default function Weather(props) {
               </li>
               <li>
                 {' '}
-                <strong>Wind:</strong> 💨 {weatherData.mainWind} km/h
+                <strong>Wind:</strong>&nbsp;💨&nbsp;{weatherData.mainWind}
+                &nbsp;km/h
               </li>
               <li>
                 {' '}

@@ -37,9 +37,9 @@ export default function ForecastDay(props) {
         <WeatherIcon code={props.data.weather[0].icon} size={48} />
       </div>
 
-      <div className='forecast-temp-max'>max {maxTemp()}°C</div>
-      <div className='forecast-temp-min'>min {minTemp()}°C</div>
-      <div className='forecast-wind'>💨 {Wind()}&nbsp; km/h</div>
+      <div className='forecast-temp-max'>max&nbsp;{maxTemp()}&nbsp;°C</div>
+      <div className='forecast-temp-min'>min&nbsp;{minTemp()}&nbsp;°C</div>
+      <div className='forecast-wind'>💨 {Wind()}&nbsp;km/h</div>
       <div className='forecast-description'>{props.data.weather[0].main}</div>
     </div>
   );
