@@ -92,16 +92,15 @@ export default function Weather(props) {
         </h3>
 
         <h1>just now in {weatherData.city}</h1>
-        <div className='row main-weather my-5 p-3 '>
-          <div className='col-4'>
-            <WeatherIcon code={weatherData.icon} size={72} />
-          </div>
-
-          <div className='col-4 '>
+        <div className='row main-weather my-4 p-3 '>
+          <div className='col text-end'>
+            <WeatherIcon code={weatherData.icon} size={64} />
             <WeatherTemp celsius={weatherData.mainTemp} />
           </div>
-          <div className='col-4'>
+          <div className='col'>
             <ul>
+              <br />
+
               <li className='text-capitalize'>
                 {' '}
                 <strong>Weather:</strong> {weatherData.description}
@@ -117,8 +116,10 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
+
         <WeatherForecast coordinates={weatherData.coordinates} />
-        <h2>There is no bad weather when your soul smiles!</h2>
+
+        <h2 className='mt-3'>There is no bad weather when your soul smiles!</h2>
       </div>
     );
   } else {

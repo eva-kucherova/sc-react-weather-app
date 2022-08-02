@@ -39,7 +39,7 @@ export default function ForecastDay(props) {
 
       <div className='forecast-temp-max'>max {maxTemp()}°C</div>
       <div className='forecast-temp-min'>min {minTemp()}°C</div>
-      <div className='forecast-wind'>💨 {Wind()} /h</div>
+      <div className='forecast-wind'>💨 {Wind()} km/h</div>
       <div className='forecast-description'>{props.data.weather[0].main}</div>
     </div>
   );
