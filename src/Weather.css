@@ -17,7 +17,6 @@
   display: inline-block;
 }
 .Weather .main-temp {
-  text-align: left;
   font-family: 'Courgette', cursive;
   font-size: 72px;
   font-weight: bold;
@@ -29,4 +28,23 @@
   font-size: 16px;
   position: relative;
   top: -36px;
+}
+@media (max-width: 576px) {
+  .Weather .main-temp {
+    font-size: 54px;
+  }
+  .Weather .main-units {
+    font-size: 12px;
+    position: relative;
+    top: -32px;
+  }
+  .Weather canvas {
+    width: 60%;
+  }
+  .Weather li {
+    font-size: 14px;
+  }
+  .ForecastDay {
+    font-size: 14px;
+  }
 }

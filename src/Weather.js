@@ -93,7 +93,7 @@ export default function Weather(props) {
 
         <h1>just now in {weatherData.city}</h1>
         <div className='row main-weather my-4 p-3 '>
-          <div className='col text-end'>
+          <div className='col text-center'>
             <WeatherIcon code={weatherData.icon} size={64} />
             <WeatherTemp celsius={weatherData.mainTemp} />
           </div>
