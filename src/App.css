@@ -10,3 +10,14 @@ h3 {
   text-align: center;
   font-family: 'Courgette', cursive;
 }
+.App a {
+  color: antiquewhite;
+  text-decoration: underline wavy #00cdff 1px;
+}
+.App a:hover {
+  color: #00cdff;
+  text-shadow: 0.3px 0.5px 0.3px antiquewhite;
+}
+.App a:visited {
+  color: #00cdff;
+}
